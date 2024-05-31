@@ -1,0 +1,9 @@
+node_modules
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore build output
+/build/

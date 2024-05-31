@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Do not forget to change the path to the css file -->
+    <title>Home Page</title>
+    <link href="/css/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="box">
+
+        <nav>
+            <a href="/">Home</a>
+            <ul>
+                <!-- Guest users and Logged users -->
+                <li><a href="/rents/housing-for-rent">Housing for rent</a></li>
+                {{#unless isAuthenticated}}
+                <!-- Guest users -->
+                <li><a href="/users/login">Login</a></li>
+                <li><a href="/users/register">Register</a></li>
+                {{else}}
+                <!-- Logged users -->
+                <li><a href="/rents/create">Create offer</a></li>
+                <li><a href="/rents/search">Search</a></li>
+                <li><a href="/users/logout">Logout</a></li>
+                {{/unless}}
+            </ul>
+        </nav>
+
+        {{#each errorMessages }}
+        <div>
+            <div class="errorContainer">
+                <p>{{this}}</p>
+            </div>
+        </div>
+        {{/each}}
+
+
+
+
+        {{{body}}}
+
+
+        <footer>
+            © 2021
+        </footer>
+    </div>
+
+</body>
+
+</html>
